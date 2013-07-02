@@ -1,0 +1,9 @@
+Run:
+
+gunicorn -c gunicorn.config main:app
+
+Voilà! Your mypoc is at localhost:5040. 5040 is just the default here - replace port with the port specified in gunicorn.config.
+
+Hint: Of course, running it from command line means your server dies if you close the terminal. A better idea would be to run it from inside a detached GNU Screen session. Try: 
+  screen -dmS My-Dashboard bash -c 'cd /path/to/dashboard/; . env/bin/activate && gunicorn -c gunicorn.config main:app' && echo "Launched screen daemon with mypoc."
+
